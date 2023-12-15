@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "faceplusplus-api"
+version = "0.1.0"
+description = ""
+authors = ["valentino-sm <5059499+valentino-sm@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+sqlalchemy = "^2.0.23"
+alembic = "^1.13.0"
+asyncpg = "^0.29.0"
+punq = "^0.7.0"
+pydantic = "^2.5.2"
+pydantic-settings = "^2.1.0"
+python-multipart = "^0.0.6"
+httpx = "^0.25.2"
+tenacity = "^8.2.3"
+pydantic-extra-types = "^2.2.0"
+opencv-python = "^4.8.1.78"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+strict = ["."]
+stubPath = "infrastructure/stubs"
+
+[tool.black]
+line-length = 88
+preview = true
+
+[tool.ruff]
+line-length = 88
+select = [
+  "F",   # pyflakes
+  "E",   # pycodestyle
+  "W",   # pycodestyle
+  # "I",   # isort
+  "N",   # pep8-naming
+  # "D",   # pydocstyle
+  "UP",  # pyupgrade
+  "B",   # flake8-bugbear
+  "A",   # flake8-builtins
+  "C4",   # flake8-comprehensions
+  "C90",   # mccabe
+]
+ignore = [
+  "E402", # module level import not at top of file
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
